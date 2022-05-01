@@ -209,7 +209,7 @@
             </table>
           </div>
           <div class="columns large-6 small-12">
-            <form class="" action="https://formsubmit.co/malejandraespinosa@ucundinamarca.edu.co" method="POST">
+            <form name="Formulary-contact">
               <label for="nombre">Nombre*</label>
               <input type="text" name="nombre" value=""placeholder="Nombre" required>
               <label for="tel">Telefono</label>
@@ -217,14 +217,21 @@
               <label for="correo">Correo*</label>
               <input type="email" name="correo" value=""placeholder="Correo" required>
               <label for="mensaje">Mensaje*</label>
-              <textarea name="mensaje" rows="4" cols="80" placeholder="Escribe aqui tus dudas" required></textarea>
-              <div class="expanded button-group">
-                <button type="reset" name="button" class="button">Borrar</button>
-                <button type="submit" name="button" class="button">Enviar</button>
-              </div>
-
+              <textarea name="mensaje" rows="4" cols="80" placeholder="Escribe aqui tus dudas" required></textarea><input id="eviarC" type="submit" value="Enviar">
 
             </form>
+            <script>
+              const btnEnvio = document.getElementById("enviarC");
+              btnEnvio.addEventListener('click', funcion(e){
+                e.preventDefault();
+                const nombre = document.getElementById('nombre').value;
+                const tel = document.getElementById('tel').value;
+                const email = document.getElementById('email').value;
+                const mensaje = document.getElementById('mensaje').value;
+                window.location.haref= `mailto:malejandraespinosa@ucundinamarca.edu.co?
+                subject=EnvioDesdeDisFun&body=Nombre%3A${nombre}%0ATelefono%3A${tel}%0ACorreo%3A${email}%0AMensaje%3A${mensaje}`;
+              });
+            </script>
           </div>
         </div>
       </section>
